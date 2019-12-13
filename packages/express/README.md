@@ -1,11 +1,4 @@
-# `express`
+# `@nger/platform.express`
 
-> TODO: description
+> express platform for nger
 
-## Usage
-
-```
-const express = require('express');
-
-// TODO: DEMONSTRATE API
-```
