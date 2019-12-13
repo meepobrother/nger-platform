@@ -1,4 +1,4 @@
-import { Injector, Provider, StaticProvider } from "@nger/di";
+import { Injector, StaticProvider } from "@nger/di";
 import { IParameterDecorator } from '@nger/decorator'
 import { WithPipesOptions, BodyMetadataKey, RequestToken, PipeTransform, ParameterHandler } from "@nger/core";
 
