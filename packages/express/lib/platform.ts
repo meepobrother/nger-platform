@@ -15,6 +15,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import cookieSession from 'cookie-session';
 import serveFavicon from 'serve-favicon';
+import compression from 'compression';
 import { join } from 'path';
 export const expressPlatform = createPlatformFactory(corePlatform, 'express', [
     ...decoratorProviders,
@@ -43,7 +44,8 @@ export const expressPlatform = createPlatformFactory(corePlatform, 'express', [
                         secret: config.get(`SESSION_SECRET`, 'session secret'),
                         maxAge: 2 * 3600 * 1000
                     }));
-                    app.use(serveFavicon(join(__dirname, 'favicon.ico')))
+                    app.use(compression())
+                    app.use(serveFavicon(join(__dirname, 'favicon.ico')));
                     ref.controllers.map(ctrl => {
                         const instance = ctrl.create();
                         const router = express.Router();

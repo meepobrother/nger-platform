@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ims/.nvm/versions/node/v12.8.1/bin/node /usr/local/bin/yarn add @types/multihashes --dev
+  /Users/ims/.nvm/versions/node/v12.8.1/bin/node /usr/local/bin/yarn add compression_tool
 
 PATH: 
   /Users/ims/.nvm/versions/node/v12.8.1/bin:/Users/ims/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Users/ims/.nvm/versions/node/v12.8.1/bin:/Users/ims/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: http://registry.npmjs.org/@types%2fmultihashes: Not found
+  Error: http://registry.npmjs.org/compression_tool: Not found
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66255:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:129397:22)
       at Request.emit (events.js:203:13)
