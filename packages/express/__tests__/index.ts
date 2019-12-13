@@ -1,4 +1,4 @@
-import { Controller, Injector, Param, Get, Query, Module, OnModuleInit, CanActivate, Injectable, Session, Ip } from '@nger/core';
+import { Controller, Injector, Param, Get, Query, Cid, Module, OnModuleInit, CanActivate, Injectable, Session, Ip } from '@nger/core';
 import { expressPlatform } from '../lib';
 @Injectable({
     providedIn: 'root'
@@ -16,10 +16,10 @@ export class DemoControler {
     constructor(private injector: Injector) { }
 
     @Get(`/`)
-    onIndex(@Session() session: object, @Ip() ip: string) {
+    onIndex(@Session() session: object, @Ip() ip: string, @Cid() cid: Buffer) {
         const views = Reflect.get(session, 'views') || 0;
         Reflect.set(session, 'views', views + 1);
-        return { views, ip };
+        return { views, ip, cid };
     }
 
     @Get(`/param/:id`)

@@ -14,8 +14,9 @@ import { controllerProvider } from "./controller";
 import { sessionProvider } from "./session";
 import { cookiesProvider } from "./cookies";
 import { ipProvider } from "./ip";
-
+import { cidProvider } from "./cid";
 export const decoratorProviders: StaticProvider[] = [
+    cidProvider,
     cookiesProvider,
     ipProvider,
     sessionProvider,
