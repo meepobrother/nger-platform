@@ -11,8 +11,10 @@ import { headHandlerProvider } from './httpMethod/head'
 import { optionsHandlerProvider } from './httpMethod/options'
 import { patchHandlerProvider } from './httpMethod/patch'
 import { controllerProvider } from "./controller";
+import { sessionProvider } from "./session";
 
 export const decoratorProviders: StaticProvider[] = [
+    sessionProvider,
     paramHandlerProvider,
     bodyHandlerProvider,
     queryHandlerProvider,

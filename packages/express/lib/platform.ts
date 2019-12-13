@@ -11,6 +11,9 @@ import bodyParser from 'body-parser';
 import { responseHandler } from './response.handler'
 import { loggerProvider } from './logger';
 import { EnvConfig } from './config';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import cookieSession from 'cookie-session';
 export const expressPlatform = createPlatformFactory(corePlatform, 'express', [
     ...decoratorProviders,
     responseHandler,
@@ -30,6 +33,14 @@ export const expressPlatform = createPlatformFactory(corePlatform, 'express', [
                     const app = express();
                     app.use(bodyParser.urlencoded({ extended: false }));
                     app.use(bodyParser.json());
+                    app.use(cors());
+                    app.use(cookieParser(config.get('COOKIE_SECRET', `cookie secret`)));
+                    app.use(cookieSession({
+                        name: 'session',
+                        keys: [`key1`, `key2`],
+                        secret: config.get(`SESSION_SECRET`, 'session secret'),
+                        maxAge: 2 * 3600 * 1000
+                    }));
                     ref.controllers.map(ctrl => {
                         const instance = ctrl.create();
                         const router = express.Router();
