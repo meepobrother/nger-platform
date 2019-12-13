@@ -1,0 +1,42 @@
+{
+    "name": "@nger/platform.express",
+    "version": "1.0.0",
+    "description": "> TODO: description",
+    "author": "imeepos <1037483576@qq.com>",
+    "homepage": "https://github.com/meepobrother/nger-platform#readme",
+    "license": "ISC",
+    "main": "lib/express.js",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "registry": "http://registry.npmjs.org",
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meepobrother/nger-platform.git"
+    },
+    "scripts": {
+        "start": "ts-node -r tsconfig-paths/register __tests__/index.ts"
+    },
+    "bugs": {
+        "url": "https://github.com/meepobrother/nger-platform/issues"
+    },
+    "dependencies": {
+        "@nger/core": "^1.4.6",
+        "@nger/di": "^1.3.1",
+        "@types/dotenv": "^8.2.0",
+        "cli-color": "^2.0.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@types/cli-color": "^0.3.30",
+        "@types/express": "^4.17.2"
+    }
+}
