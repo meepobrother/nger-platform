@@ -47,13 +47,12 @@ export const expressPlatform = createPlatformFactory(corePlatform, 'express', [
                     app.use(compression())
                     app.use(serveFavicon(join(__dirname, 'favicon.ico')));
                     ref.controllers.map(ctrl => {
-                        const instance = ctrl.create();
                         const router = express.Router();
                         ctrl.injector.setStatic([{ provide: RouterToken, useValue: router }, { provide: AppToken, useValue: app }])
                         ctrl.metadata.methods.map((it: IMethodDecorator<any, any>) => {
                             if (it.metadataKey) {
                                 const handler = ctrl.injector.get<HttpMethodHandler>(it.metadataKey, null, InjectFlags.Optional);
-                                if (handler) handler(instance, ctrl, it)
+                                if (handler) handler(ctrl, it)
                             }
                         });
                         ctrl.metadata.classes.map((it: IClassDecorator<any, any>) => {
@@ -63,7 +62,8 @@ export const expressPlatform = createPlatformFactory(corePlatform, 'express', [
                     });
                     const port = config.get('PORT', 9000)
                     app.listen(port, `0.0.0.0`, () => {
-                        logger.log(`app start at http://0.0.0.0:${port}`, 'core')
+                        logger.log(`app start at http://0.0.0.0:${port}`, 'core');
+                        console.log(`app start at http://0.0.0.0:${port}`);
                         resolve()
                     });
                     return app;

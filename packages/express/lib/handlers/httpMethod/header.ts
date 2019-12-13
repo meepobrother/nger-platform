@@ -2,7 +2,7 @@ import { HttpMethodHandler, Header, ControllerFactory, HeaderMetadataKey, Respon
 import { StaticProvider } from "@nger/di";
 import { Response } from "express";
 import { IMethodDecorator } from '@nger/decorator';
-const handler: HttpMethodHandler<any, Header> = (instance: any, controller: ControllerFactory<any>, decorator: IMethodDecorator<any, Header>) => {
+const handler: HttpMethodHandler<any, Header> = (controller: ControllerFactory<any>, decorator: IMethodDecorator<any, Header>) => {
     if (decorator.options) {
         const res = controller.injector.get<Response>(ResponseToken);
         const options: Header = decorator.options;

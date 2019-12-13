@@ -3,11 +3,14 @@ import { Provider, InjectFlags, StaticProvider } from "@nger/di";
 import { IRouter } from "express";
 import { IMethodDecorator } from '@nger/decorator';
 import { createGuard } from "../../createGuard";
-const handler: HttpMethodHandler<any, GetOptions> = (instance: any, controller: ControllerFactory<any>, decorator: IMethodDecorator<any, GetOptions>) => {
+import { appendReq } from "./util";
+const handler: HttpMethodHandler<any, GetOptions> = (controller: ControllerFactory<any>, decorator: IMethodDecorator<any, GetOptions>) => {
     if (decorator.options) {
         const router = controller.injector.get<IRouter>(RouterToken);
         const errorHandler = controller.injector.get(ErrorHandler);
-        router.patch(decorator.options.path, ...(decorator.options.useGuards || []).map(it => createGuard(controller, it)), () => {
+        router.patch(decorator.options.path, ...(decorator.options.useGuards || []).map(it => createGuard(controller, it)), (req, res, next) => {
+            appendReq(req, res, next, controller.injector);
+            const instance = controller.create();
             const call = Reflect.get(instance, decorator.property);
             if (call) {
                 try {

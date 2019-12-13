@@ -2,7 +2,7 @@ import { HttpMethodHandler, RedirectMetadataKey, Redirect, ResponseToken, Contro
 import { StaticProvider } from "@nger/di";
 import { Response } from "express";
 import { IMethodDecorator } from '@nger/decorator';
-const handler: HttpMethodHandler<any, Redirect> = (instance: any, controller: ControllerFactory<any>, decorator: IMethodDecorator<any, Redirect>) => {
+const handler: HttpMethodHandler<any, Redirect> = (controller: ControllerFactory<any>, decorator: IMethodDecorator<any, Redirect>) => {
     if (decorator.options) {
         const res = controller.injector.get<Response>(ResponseToken);
         const options = decorator.options;

@@ -32,7 +32,7 @@ export const controllerProvider: StaticProvider = {
                 }, {
                     provide: NextToken,
                     useValue: next
-                }])
+                }]);
                 router(req, res, next)
             });
         }
