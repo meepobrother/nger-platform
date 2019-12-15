@@ -1,6 +1,6 @@
-import { StaticProvider } from "@nger/di";
+import { StaticProvider, InjectionToken } from "@nger/di";
 import {
-    ControllerMetadataKey, RequestToken, ResponseToken,
+    RequestToken, ResponseToken,
     NextToken, ControllerFactory, ControllerOptions, AppToken, RouterToken,
     RequestId
 } from "@nger/core";
@@ -9,8 +9,9 @@ import { createGuard } from "../createGuard";
 import { Express, Router } from "express-serve-static-core";
 import { createCid } from "./util";
 const multihash = require('multihashes')
+export const HttpControllerToken = new InjectionToken(`HttpControllerToken`)
 export const controllerProvider: StaticProvider = {
-    provide: ControllerMetadataKey,
+    provide: HttpControllerToken,
     useValue: (ctrl: ControllerFactory<any>, it: IClassDecorator<any, ControllerOptions>) => {
         const app = ctrl.injector.get<Express>(AppToken);
         const router = ctrl.injector.get<Router>(RouterToken)

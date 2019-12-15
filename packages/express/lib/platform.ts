@@ -1,7 +1,7 @@
 import {
     Injector, InjectFlags, AppToken, HttpMethodHandler,
     RouterToken, createPlatformFactory, APP_INITIALIZER, NgModuleRef,
-    Logger, Config, ClassHandler
+    Logger, Config, ClassHandler, ControllerFactory
 } from '@nger/core';
 import { decoratorProviders } from './handlers';
 import { IMethodDecorator, IClassDecorator } from '@nger/decorator';
@@ -16,6 +16,7 @@ import cookieSession from 'cookie-session';
 import serveFavicon from 'serve-favicon';
 import compression from 'compression';
 import { join } from 'path';
+import { HttpControllerToken } from './handlers/controller';
 export const expressPlatform = createPlatformFactory(platformNode, 'express', [
     ...decoratorProviders,
     responseHandler,
@@ -44,7 +45,7 @@ export const expressPlatform = createPlatformFactory(platformNode, 'express', [
                     }));
                     app.use(compression())
                     app.use(serveFavicon(join(__dirname, 'favicon.ico')));
-                    ref.controllers.map(ctrl => {
+                    ref.controllers.map((ctrl: ControllerFactory<any>) => {
                         const router = express.Router();
                         ctrl.injector.setStatic([{ provide: RouterToken, useValue: router }, { provide: AppToken, useValue: app }])
                         ctrl.metadata.methods.map((it: IMethodDecorator<any, any>) => {
@@ -54,7 +55,7 @@ export const expressPlatform = createPlatformFactory(platformNode, 'express', [
                             }
                         });
                         ctrl.metadata.classes.map((it: IClassDecorator<any, any>) => {
-                            const handler = ctrl.injector.get<ClassHandler<any, any>>(it.metadataKey)
+                            const handler = ctrl.injector.get<ClassHandler<any, any>>(HttpControllerToken)
                             if (handler) handler(ctrl, it)
                         });
                     });
