@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@nger/core@^1.6.6":
-  version "1.6.6"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.6.6.tgz#77e1260250aef23be6cb052b10fd76f3a82c3108"
-  integrity sha512-34iFDln7WPZuAUmP0GC2VF1wBp6eRUNXTeTH487MSnGJPezCSzwUFIf04bKQL/Af19gFApuZa7jBkEOzepq1LA==
+"@nger/core@^1.6.8":
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.6.8.tgz#e78907c48c7347203f09b85738251e8c093cd4fa"
+  integrity sha512-rSw5yOXILed9yEGe6o5ibHWBPA8O1pXvM6Jl679PDTVZvmMoq47Mu6bZmIUZD7T4dkHrtydxRgFGvAVFR///rQ==
   dependencies:
     "@nger/decorator" "^1.1.7"
     "@nger/di" "^1.4.0"

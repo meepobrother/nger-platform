@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@nger/core@^1.6.6":
-  version "1.6.6"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.6.6.tgz#77e1260250aef23be6cb052b10fd76f3a82c3108"
-  integrity sha512-34iFDln7WPZuAUmP0GC2VF1wBp6eRUNXTeTH487MSnGJPezCSzwUFIf04bKQL/Af19gFApuZa7jBkEOzepq1LA==
+"@nger/core@^1.6.8":
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.6.8.tgz#e78907c48c7347203f09b85738251e8c093cd4fa"
+  integrity sha512-rSw5yOXILed9yEGe6o5ibHWBPA8O1pXvM6Jl679PDTVZvmMoq47Mu6bZmIUZD7T4dkHrtydxRgFGvAVFR///rQ==
   dependencies:
     "@nger/decorator" "^1.1.7"
     "@nger/di" "^1.4.0"
@@ -25,12 +25,12 @@
   dependencies:
     "@nger/decorator" "^1.1.6"
 
-"@nger/platform.node@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@nger/platform.node/-/platform.node-1.0.9.tgz#a071d3297d777d906e124abc610d733ecfc1e8bd"
-  integrity sha512-a1KrgWa0ktWv1EVeRdNTzVyZXKnFJL1pBz5P2iJsgyNrZ3k/aoJQKTEUuWKbwUDq5Kkvx6crR8YHzKoj/T1E9w==
+"@nger/platform.node@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@nger/platform.node/-/platform.node-1.1.0.tgz#da103674d3023d4da7f06798a2ae97e3b1d5005f"
+  integrity sha512-g1WvTcKlXWsxMe34FxfQJ2Q7ixITymAWIFJSy5SPP1bcR07c7F+qI5+gA+rYJtgO3bI8KmXNlPJn4lkvZL15LQ==
   dependencies:
-    "@nger/core" "^1.6.6"
+    "@nger/core" "^1.6.8"
     cli-color "^2.0.0"
 
 "@types/body-parser@*":
