@@ -15,6 +15,7 @@ export class Demo {
         return cid;
     }
 }
+
 @Controller({
     path: '/',
     useGuards: [CanActiveIndex],
@@ -53,4 +54,4 @@ export class AppModule implements OnModuleInit {
     ngOnModuleInit() { }
 }
 
-expressPlatform().bootstrapModule(AppModule).then(res => res.onInit()).then()
+expressPlatform([]).bootstrapModule(AppModule).then(res => res.onInit()).then()

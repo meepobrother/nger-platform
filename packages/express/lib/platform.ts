@@ -1,6 +1,5 @@
 import {
-    corePlatform, Injector,
-    InjectFlags, AppToken, HttpMethodHandler,
+    Injector, InjectFlags, AppToken, HttpMethodHandler,
     RouterToken, createPlatformFactory, APP_INITIALIZER, NgModuleRef,
     Logger, Config, ClassHandler
 } from '@nger/core';
@@ -9,7 +8,7 @@ import { IMethodDecorator, IClassDecorator } from '@nger/decorator';
 import express from 'express';
 import bodyParser from 'body-parser';
 import { responseHandler } from './response.handler'
-import { loggerProvider } from './logger';
+import { platformNode } from '@nger/platform.node';
 import { EnvConfig } from './config';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -17,10 +16,9 @@ import cookieSession from 'cookie-session';
 import serveFavicon from 'serve-favicon';
 import compression from 'compression';
 import { join } from 'path';
-export const expressPlatform = createPlatformFactory(corePlatform, 'express', [
+export const expressPlatform = createPlatformFactory(platformNode, 'express', [
     ...decoratorProviders,
     responseHandler,
-    loggerProvider,
     {
         provide: Config,
         useClass: EnvConfig

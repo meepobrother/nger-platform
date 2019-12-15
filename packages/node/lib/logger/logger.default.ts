@@ -1,17 +1,14 @@
-import { Logger, LogLevel } from "@nger/core";
+import { Logger, LogLevel, LOGGER_LEVEL, Inject } from "@nger/core";
 import { isObject } from './util';
 import clc from 'cli-color';
 const yellow = clc.xterm(3);
 export class LoggerDefault extends Logger {
-    logLevels: LogLevel[] = [
-        'log',
-        'error',
-        'warn',
-        'debug',
-        'verbose',
-    ];
     lastTimestamp: number;
     isTimestampEnabled: boolean;
+    constructor(@Inject(LOGGER_LEVEL) public logLevels: LogLevel[]) {
+        super();
+        this.logLevels = this.logLevels || [];
+    }
     private isLogLevelEnabled(level: LogLevel): boolean {
         return this.logLevels.includes(level);
     }
