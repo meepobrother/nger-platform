@@ -5,8 +5,9 @@
     "lerna": "^3.13.1"
   },
   "dependencies": {
-    "@nger/core": "^1.6.2",
-    "@nger/di": "^1.3.1",
+    "@nger/core": "^1.7.2",
+    "@nger/di": "^1.4.0",
+    "@nger/orm.core": "^1.0.6",
     "@types/cli-color": "^0.3.30",
     "cli-color": "^2.0.0",
     "ts-node": "^8.5.4",

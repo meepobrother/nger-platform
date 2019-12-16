@@ -748,31 +748,35 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nger/core@^1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.6.2.tgz#f719ca18bc1f182305e451ceb57292f6105287c9"
-  integrity sha512-a8RofaQYEvVD9WTXKmKD38qVSUH359UXFl54UFgccFYNn08fAaGTFKBIc+49ZC6aW4sCEr2lo0Auanc2maYoBw==
+"@nger/core@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.7.2.tgz#437c3df15efbf968ae8ddffdd784e6693319df69"
+  integrity sha512-P25aAOfSArUU2nsT/iv45CwRk2ayUw/hF/RoZZq8Vmmb9wvGNo2UiAnfJ3QYdeCOLbCfxV/0S68bMAD6guAB5w==
   dependencies:
-    "@nger/decorator" "^1.1.5"
-    "@nger/di" "^1.3.2"
+    "@nger/decorator" "^1.1.7"
+    "@nger/di" "^1.4.0"
     rxjs "^6.5.3"
 
-"@nger/decorator@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@nger/decorator/-/decorator-1.1.5.tgz#9117c6e2dffe89cf4d73362123c9d3328451601f"
-  integrity sha512-TIeeQw+19MbXQkMSfSnk/vQbZGGY16HRBpi2tEFHcW2OBxpL9HZmZBQOjfoIBd3psW+PnzgqDq0TL2duGm2AZQ==
+"@nger/decorator@^1.1.6", "@nger/decorator@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@nger/decorator/-/decorator-1.1.7.tgz#99ef5a45bcb833af3e9061bd1aa1e16115aab899"
+  integrity sha512-jlqQVb3RcKapd//dNvaSTwbhCI2BAouh/PyI7ze+yMOP2PX24BwdnUnX535Iyt6wCks4Q1Vx/nSpUu5kiw/L4g==
   dependencies:
     reflect-metadata "^0.1.13"
 
-"@nger/di@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.3.1.tgz#f386637d67b18ad377080d55df87a0645be367b8"
-  integrity sha512-Ns3pUlOMhZpM5CynjuTPzzcVcNvYMabaeyFSko2YT8qrZtM8SCbLnb0IKgisuCeQFZw6NmX0ScWm1i5pbWMwMw==
+"@nger/di@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.4.0.tgz#27c60cce824f90fab3cd58128c0bfbf908383f31"
+  integrity sha512-RhmDbuYtM1VR14jOmvOwSqVLcoiIlxUI+03HUtUs9TBlDWsK6zp/HBcYrDx/J2ZRcXQD4UhhJu9531Ldfe368w==
+  dependencies:
+    "@nger/decorator" "^1.1.6"
 
-"@nger/di@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.3.2.tgz#c1547cce93ea386aa3f53687f34bb20705cdd771"
-  integrity sha512-LTTVSN3xDVGDKhwHzQMxr4a7pd7APbPtJevsREs5eCPvBDSd/Zisp7541Pzx+ymOYx86B2uO14Y++qP7Z5duYw==
+"@nger/orm.core@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@nger/orm.core/-/orm.core-1.0.6.tgz#dfd9c2401e62c8f3f9a2c31c2f71d24dde64e56b"
+  integrity sha512-Ts0llPxx32tC14pM6YcC7YJEuWA2lojDXr65kU9Z3nwVjOtJdYHFcgFipFOriqz0nkC0qVPGQ5kffKHI+kSklQ==
+  dependencies:
+    "@nger/core" "^1.7.2"
 
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
