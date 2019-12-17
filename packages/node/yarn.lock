@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@nger/core@^1.6.8":
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.6.8.tgz#e78907c48c7347203f09b85738251e8c093cd4fa"
-  integrity sha512-rSw5yOXILed9yEGe6o5ibHWBPA8O1pXvM6Jl679PDTVZvmMoq47Mu6bZmIUZD7T4dkHrtydxRgFGvAVFR///rQ==
+"@nger/core@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.7.2.tgz#437c3df15efbf968ae8ddffdd784e6693319df69"
+  integrity sha512-P25aAOfSArUU2nsT/iv45CwRk2ayUw/hF/RoZZq8Vmmb9wvGNo2UiAnfJ3QYdeCOLbCfxV/0S68bMAD6guAB5w==
   dependencies:
     "@nger/decorator" "^1.1.7"
     "@nger/di" "^1.4.0"
@@ -32,10 +32,24 @@
   dependencies:
     "@nger/decorator" "^1.1.6"
 
+"@nger/orm.core@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@nger/orm.core/-/orm.core-1.0.6.tgz#dfd9c2401e62c8f3f9a2c31c2f71d24dde64e56b"
+  integrity sha512-Ts0llPxx32tC14pM6YcC7YJEuWA2lojDXr65kU9Z3nwVjOtJdYHFcgFipFOriqz0nkC0qVPGQ5kffKHI+kSklQ==
+  dependencies:
+    "@nger/core" "^1.7.2"
+
 "@types/cli-color@^0.3.30":
   version "0.3.30"
   resolved "https://registry.yarnpkg.com/@types/cli-color/-/cli-color-0.3.30.tgz#2dca123e20cef80463133d15447e912399221df6"
   integrity sha512-KMMp2Km5QYLduPP6bAgydlSDiw1Tem6WDqIV48KY/D3RYsPbevccJ4W/kGDlbubeOq1XGNSqGRgLFpzC/GNNLw==
+
+"@types/dotenv@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@types/dotenv/-/dotenv-8.2.0.tgz#5cd64710c3c98e82d9d15844375a33bf1b45d053"
+  integrity sha512-ylSC9GhfRH7m1EUXBXofhgx4lUWmFeQDINW5oLuS+gxWdfUeW4zJdeVTYVkexEW+e2VUvlZR2kGnGGipAWR7kw==
+  dependencies:
+    dotenv "*"
 
 ansi-regex@^2.1.1:
   version "2.1.1"
@@ -61,6 +75,11 @@ d@1, d@^1.0.1:
   dependencies:
     es5-ext "^0.10.50"
     type "^1.0.1"
+
+dotenv@*, dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 es5-ext@^0.10.35, es5-ext@^0.10.45, es5-ext@^0.10.46, es5-ext@^0.10.50, es5-ext@^0.10.51, es5-ext@~0.10.14, es5-ext@~0.10.2, es5-ext@~0.10.46:
   version "0.10.53"

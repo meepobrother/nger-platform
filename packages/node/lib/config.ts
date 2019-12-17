@@ -1,5 +1,6 @@
 import { Config } from '@nger/core';
 import { config } from 'dotenv';
+
 export class EnvConfig extends Config {
     constructor() {
         super();

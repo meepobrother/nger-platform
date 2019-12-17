@@ -9,7 +9,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { responseHandler } from './response.handler'
 import { platformNode } from '@nger/platform.node';
-import { EnvConfig } from './config';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import cookieSession from 'cookie-session';
@@ -20,10 +19,6 @@ import { HttpControllerToken } from './handlers/controller';
 export const expressPlatform = createPlatformFactory(platformNode, 'express', [
     ...decoratorProviders,
     responseHandler,
-    {
-        provide: Config,
-        useClass: EnvConfig
-    },
     {
         provide: APP_INITIALIZER,
         useFactory: (injector: Injector) => {

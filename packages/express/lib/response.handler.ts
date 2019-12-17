@@ -27,9 +27,9 @@ const handler = (item: any, injector: Injector) => {
     } else if (typeof item === 'function') {
         response.sendStatus(503).send('can not send a function')
     } else if (typeof item === 'undefined') {
-        response.sendStatus(200)
+        // response.sendStatus(200)
     } else {
-        response.sendStatus(200)
+        // response.sendStatus(200)
     }
 }
 export const responseHandler: StaticProvider = {
