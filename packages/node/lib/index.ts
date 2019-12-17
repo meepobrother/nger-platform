@@ -10,6 +10,8 @@ import { Process } from './process';
 import { ChildProcess } from './child_process';
 import { QueryString } from './queryString';
 import { Url } from './url';
+import { Crypto } from './crypto';
+import { Console } from './console'
 export const platformNode = createPlatformFactory(corePlatform, 'node', [
     ...ngerOrmCoreHandlers,
     {
