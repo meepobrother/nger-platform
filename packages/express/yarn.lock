@@ -11,6 +11,15 @@
     "@nger/di" "^1.4.0"
     rxjs "^6.5.3"
 
+"@nger/core@^1.7.9":
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.7.9.tgz#4faba0ae110a1da37343d5fbfb01443a49213f8e"
+  integrity sha512-OWlReOH2+LHUfivsKSMxUjin9EahKd9VtJlZVk72OWfFEddMNihVGcf/ZV43ZrEJZY8crrbpHcEM0AE6+v2A7A==
+  dependencies:
+    "@nger/decorator" "^1.1.7"
+    "@nger/di" "^1.4.0"
+    rxjs "^6.5.3"
+
 "@nger/decorator@^1.1.6", "@nger/decorator@^1.1.7":
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/@nger/decorator/-/decorator-1.1.7.tgz#99ef5a45bcb833af3e9061bd1aa1e16115aab899"
@@ -25,14 +34,31 @@
   dependencies:
     "@nger/decorator" "^1.1.6"
 
-"@nger/platform.node@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@nger/platform.node/-/platform.node-1.1.6.tgz#f28e741bb6d1c94093c6a18677ed4d81b31de740"
-  integrity sha512-Or2JwXmSQ8teV5stBmbKH46faTq5gghKGz/G1dSc0/6+1t0x39k82DxY+/WobYLl/Qg/XYoGRvsWfjW7rsj9Uw==
+"@nger/platform.core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@nger/platform.core/-/platform.core-1.0.1.tgz#40fa7443386dada33858eac8a03769f7419fc7c2"
+  integrity sha512-BcxJAcboPXVh04K6+l4FPr1r5lmaL32labGfchWgEvNpVXCEFwm7aiRaeEqF8lVe5RAC48BNTjlFusMNWrSUOg==
   dependencies:
-    "@nger/core" "^1.7.4"
+    "@nger/core" "^1.7.9"
+    "@nger/rx.store" "^1.0.1"
+
+"@nger/platform.node@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@nger/platform.node/-/platform.node-1.1.7.tgz#edb999516215e65cb34d8a3b5d07e5ba6e828e02"
+  integrity sha512-ePaTA2BhMnsTJXYjaE8fFdrAB13KCUhNBrjQMw/HSPD2JVCSxU6Hkua3QR0pSv5G2cQuytEKHOu+d04qbzF18A==
+  dependencies:
+    "@nger/core" "^1.7.9"
+    "@nger/platform.core" "^1.0.1"
     cli-color "^2.0.0"
     dotenv "^8.2.0"
+
+"@nger/rx.store@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@nger/rx.store/-/rx.store-1.0.1.tgz#d2bec0f8699461855553efe4696ca0cd19b3abdb"
+  integrity sha512-VeWQ3iTfW5TgALiFFRSE3wGLa2nN/0fej6PvzLu40U8VxH8uqnIRn4yOGsXyAPisyVYKl/xSXWxuBvUy9nuOwA==
+  dependencies:
+    "@nger/core" "^1.7.4"
+    rxjs "^6.5.3"
 
 "@types/body-parser@*":
   version "1.17.1"

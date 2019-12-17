@@ -11,6 +11,15 @@
     "@nger/di" "^1.4.0"
     rxjs "^6.5.3"
 
+"@nger/core@^1.7.9":
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.7.9.tgz#4faba0ae110a1da37343d5fbfb01443a49213f8e"
+  integrity sha512-OWlReOH2+LHUfivsKSMxUjin9EahKd9VtJlZVk72OWfFEddMNihVGcf/ZV43ZrEJZY8crrbpHcEM0AE6+v2A7A==
+  dependencies:
+    "@nger/decorator" "^1.1.7"
+    "@nger/di" "^1.4.0"
+    rxjs "^6.5.3"
+
 "@nger/decorator@^1.1.6":
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/@nger/decorator/-/decorator-1.1.6.tgz#0dbe8046b01174b43cbdb5df6c56ac74c0e49190"
@@ -31,6 +40,22 @@
   integrity sha512-RhmDbuYtM1VR14jOmvOwSqVLcoiIlxUI+03HUtUs9TBlDWsK6zp/HBcYrDx/J2ZRcXQD4UhhJu9531Ldfe368w==
   dependencies:
     "@nger/decorator" "^1.1.6"
+
+"@nger/platform.core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@nger/platform.core/-/platform.core-1.0.1.tgz#40fa7443386dada33858eac8a03769f7419fc7c2"
+  integrity sha512-BcxJAcboPXVh04K6+l4FPr1r5lmaL32labGfchWgEvNpVXCEFwm7aiRaeEqF8lVe5RAC48BNTjlFusMNWrSUOg==
+  dependencies:
+    "@nger/core" "^1.7.9"
+    "@nger/rx.store" "^1.0.1"
+
+"@nger/rx.store@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@nger/rx.store/-/rx.store-1.0.1.tgz#d2bec0f8699461855553efe4696ca0cd19b3abdb"
+  integrity sha512-VeWQ3iTfW5TgALiFFRSE3wGLa2nN/0fej6PvzLu40U8VxH8uqnIRn4yOGsXyAPisyVYKl/xSXWxuBvUy9nuOwA==
+  dependencies:
+    "@nger/core" "^1.7.4"
+    rxjs "^6.5.3"
 
 "@types/cli-color@^0.3.30":
   version "0.3.30"

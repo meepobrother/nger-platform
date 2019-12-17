@@ -4,7 +4,6 @@ import { IRouter } from "express";
 import { IMethodDecorator } from '@nger/decorator';
 import { createGuard } from "../../createGuard";
 import { appendReq } from './util';
-import { createCid } from "../util";
 const multihash = require('multihashes')
 const handler: HttpMethodHandler<any, GetOptions> = (controller: ControllerFactory<any>, decorator: IMethodDecorator<any, GetOptions>) => {
     if (decorator.options) {

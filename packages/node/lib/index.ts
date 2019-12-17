@@ -1,6 +1,7 @@
-import { corePlatform, createPlatformFactory, LOGGER_LEVEL, LogLevel, Config } from '@nger/core';
+import { createPlatformFactory, LOGGER_LEVEL, LogLevel, Config } from '@nger/core';
 import { loggerProvider } from './logger';
 import { ngerOrmCoreHandlers } from '@nger/orm.core'
+import { platformCore } from '@nger/platform.core';
 import { EnvConfig } from './config';
 import { Fs } from './fs';
 import { Os } from './os';
@@ -12,7 +13,7 @@ import { QueryString } from './queryString';
 import { Url } from './url';
 import { Crypto } from './crypto';
 import { Console } from './console'
-export const platformNode = createPlatformFactory(corePlatform, 'node', [
+export const platformNode = createPlatformFactory(platformCore, 'node', [
     ...ngerOrmCoreHandlers,
     {
         provide: Crypto,

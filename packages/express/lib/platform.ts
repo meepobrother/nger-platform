@@ -52,33 +52,21 @@ export const expressPlatform = createPlatformFactory(platformNode, 'express', [
         provide: APP_INITIALIZER,
         useFactory: (injector: Injector) => {
             return async () => {
-                return new Promise((resolve, reject) => {
-                    const config = injector.get(Config);
-                    const ref = injector.get(NgModuleRef);
-                    const logger = injector.get(Logger);
-                    ref.controllers.map((ctrl: ControllerFactory<any>) => {
-                        const router = express.Router();
-                        ctrl.injector.setStatic([{ provide: RouterToken, useValue: router }])
-                        ctrl.metadata.methods.map((it: IMethodDecorator<any, any>) => {
-                            if (it.metadataKey) {
-                                const handler = ctrl.injector.get<HttpMethodHandler>(it.metadataKey, null, InjectFlags.Optional);
-                                if (handler) handler(ctrl, it)
-                            }
-                        });
-                        ctrl.metadata.classes.map((it: IClassDecorator<any, any>) => {
-                            const handler = ctrl.injector.get<ClassHandler<any, any>>(HttpControllerToken)
+                const ref = injector.get(NgModuleRef);
+                ref.controllers.map((ctrl: ControllerFactory<any>) => {
+                    const router = express.Router();
+                    ctrl.injector.setStatic([{ provide: RouterToken, useValue: router }])
+                    ctrl.metadata.methods.map((it: IMethodDecorator<any, any>) => {
+                        if (it.metadataKey) {
+                            const handler = ctrl.injector.get<HttpMethodHandler>(it.metadataKey, null, InjectFlags.Optional);
                             if (handler) handler(ctrl, it)
-                        });
+                        }
                     });
-                    const port = config.get('PORT', 9000);
-                    const app = injector.get<express.Application>(AppToken);
-                    app.listen(port, `0.0.0.0`, () => {
-                        logger.log(`app start at http://0.0.0.0:${port}`, 'core');
-                        console.log(`app start at http://0.0.0.0:${port}`);
-                        resolve()
+                    ctrl.metadata.classes.map((it: IClassDecorator<any, any>) => {
+                        const handler = ctrl.injector.get<ClassHandler<any, any>>(HttpControllerToken)
+                        if (handler) handler(ctrl, it)
                     });
-                    return app;
-                })
+                });
             }
         },
         deps: [Injector],
