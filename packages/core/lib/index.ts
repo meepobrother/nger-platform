@@ -4,3 +4,5 @@ export const platformCore = createPlatformFactory(corePlatform, '@nger/platform.
     reducerProvider,
     caseProvider
 ]);
+
+export { getReducer } from './handler';
