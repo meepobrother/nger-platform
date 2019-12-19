@@ -1,7 +1,7 @@
 import {
-    Injector, InjectFlags, AppToken, HttpMethodHandler,
-    RouterToken, createPlatformFactory, APP_INITIALIZER, NgModuleRef,
-    Logger, Config, ClassHandler, ControllerFactory, PLATFORM_INITIALIZER
+    Injector, InjectFlags, APP_ID, ControllerMethodHandler,
+    ROUTER, createPlatformFactory, APP_INITIALIZER, NgModuleRef,
+    Config, ControllerFactory, PLATFORM_INITIALIZER, ControllerClassHandler
 } from '@nger/core';
 import { decoratorProviders } from './handlers';
 import { IMethodDecorator, IClassDecorator } from '@nger/decorator';
@@ -38,7 +38,7 @@ export const expressPlatform = createPlatformFactory(platformNode, 'express', [
                 app.use(compression())
                 app.use(serveFavicon(join(__dirname, 'favicon.ico')));
                 injector.setStatic([{
-                    provide: AppToken,
+                    provide: APP_ID,
                     useValue: app
                 }])
             }
@@ -55,15 +55,15 @@ export const expressPlatform = createPlatformFactory(platformNode, 'express', [
                 const ref = injector.get(NgModuleRef);
                 ref.controllers.map((ctrl: ControllerFactory<any>) => {
                     const router = express.Router();
-                    ctrl.injector.setStatic([{ provide: RouterToken, useValue: router }])
+                    ctrl.injector.setStatic([{ provide: ROUTER, useValue: router }])
                     ctrl.metadata.methods.map((it: IMethodDecorator<any, any>) => {
                         if (it.metadataKey) {
-                            const handler = ctrl.injector.get<HttpMethodHandler>(it.metadataKey, null, InjectFlags.Optional);
+                            const handler = ctrl.injector.get<ControllerMethodHandler>(it.metadataKey, null, InjectFlags.Optional);
                             if (handler) handler(ctrl, it)
                         }
                     });
                     ctrl.metadata.classes.map((it: IClassDecorator<any, any>) => {
-                        const handler = ctrl.injector.get<ClassHandler<any, any>>(HttpControllerToken)
+                        const handler = ctrl.injector.get<ControllerClassHandler<any, any>>(HttpControllerToken)
                         if (handler) handler(ctrl, it)
                     });
                 });

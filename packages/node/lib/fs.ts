@@ -1,4 +1,4 @@
-import { unlinkSync, PathLike, writeFile, mkdir } from 'fs';
+import { unlinkSync, PathLike } from 'fs';
 export class Fs {
     unlinkSync(path: PathLike): any {
         return unlinkSync(path)

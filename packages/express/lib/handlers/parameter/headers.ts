@@ -1,8 +1,8 @@
-import { Injector, Provider, StaticProvider } from "@nger/di";
-import { WithPipesOptions, HeadersMetadataKey, RequestToken, PipeTransform, ParameterHandler } from "@nger/core";
+import { Injector, StaticProvider } from "@nger/di";
+import { WithPipesOptions, HeadersMetadataKey, REQUEST, PipeTransform, ParameterHandler } from "@nger/core";
 import { IParameterDecorator } from '@nger/decorator'
 const handler: ParameterHandler = (handler: Function, parameters: any[], instance: any, injector: Injector, decorator: IParameterDecorator<any, WithPipesOptions>) => {
-    const request = injector.get<any>(RequestToken);
+    const request = injector.get<any>(REQUEST);
     const query = Reflect.get(request, 'headers');
     if (decorator.options) {
         const { property, usePipes } = decorator.options;

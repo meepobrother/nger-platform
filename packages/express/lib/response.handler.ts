@@ -1,7 +1,7 @@
-import { ResponseToken, isPromise, isObservable, HttpCode, ResponseHandlerToken, ErrorHandler, Injector, StaticProvider } from '@nger/core';
+import { RESPONSE, isPromise, isObservable, RESPONSE_HANDLER, ErrorHandler, Injector, StaticProvider } from '@nger/core';
 import { Response } from 'express';
 const handler = (item: any, injector: Injector) => {
-    const response = injector.get<Response>(ResponseToken)
+    const response = injector.get<Response>(RESPONSE)
     const errorHandler = injector.get(ErrorHandler)
     if (isPromise(item)) {
         item.then(it => handler(it, injector))
@@ -33,6 +33,6 @@ const handler = (item: any, injector: Injector) => {
     }
 }
 export const responseHandler: StaticProvider = {
-    provide: ResponseHandlerToken,
+    provide: RESPONSE_HANDLER,
     useValue: handler
 }

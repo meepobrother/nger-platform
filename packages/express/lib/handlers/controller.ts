@@ -1,8 +1,8 @@
 import { StaticProvider, InjectionToken } from "@nger/di";
 import {
-    RequestToken, ResponseToken,
-    NextToken, ControllerFactory, ControllerOptions, AppToken, RouterToken,
-    RequestId
+    REQUEST, RESPONSE,
+    NEXT, ControllerFactory, ControllerOptions, APP_ID, ROUTER,
+    REQUEST_ID
 } from "@nger/core";
 import { IClassDecorator } from '@nger/decorator';
 import { createGuard } from "../createGuard";
@@ -13,8 +13,8 @@ export const HttpControllerToken = new InjectionToken(`HttpControllerToken`)
 export const controllerProvider: StaticProvider = {
     provide: HttpControllerToken,
     useValue: (ctrl: ControllerFactory<any>, it: IClassDecorator<any, ControllerOptions>) => {
-        const app = ctrl.injector.get<Express>(AppToken);
-        const router = ctrl.injector.get<Router>(RouterToken)
+        const app = ctrl.injector.get<Express>(APP_ID);
+        const router = ctrl.injector.get<Router>(ROUTER)
         if (it.options) {
             const options = it.options;
             app.use(options.path, ...(options.useGuards || []).map(it => createGuard(ctrl, it)), (req, res, next) => {
@@ -22,16 +22,16 @@ export const controllerProvider: StaticProvider = {
                 const buf = multihash.encode(Buffer.from(JSON.stringify({ headers, query, body, method, url })), `sha2-256`);
                 const cid = createCid(buf);
                 ctrl.injector.setStatic([{
-                    provide: RequestId,
+                    provide: REQUEST_ID,
                     useValue: cid
                 }, {
-                    provide: RequestToken,
+                    provide: REQUEST,
                     useValue: req
                 }, {
-                    provide: ResponseToken,
+                    provide: RESPONSE,
                     useValue: res
                 }, {
-                    provide: NextToken,
+                    provide: NEXT,
                     useValue: next
                 }]);
                 router(req, res, next)

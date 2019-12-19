@@ -1,3 +1,3 @@
-export class Os { 
-    
+export class Os {
+
 }

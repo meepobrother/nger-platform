@@ -1,8 +1,8 @@
 import { StaticProvider, Injector } from "@nger/di";
-import { CidMetadataKey, ParameterHandler, RequestId } from "@nger/core";
+import { CidMetadataKey, ParameterHandler, REQUEST_ID } from "@nger/core";
 import { IParameterDecorator } from '@nger/decorator';
 const handler: ParameterHandler<any, any> = (handler: Function, parameters: Array<any>, instance: any, injector: Injector, parameter: IParameterDecorator<any, any>) => {
-    const cid = injector.get(RequestId)
+    const cid = injector.get(REQUEST_ID)
     Reflect.set(parameters, parameter.parameterIndex, cid);
 }
 export const cidProvider: StaticProvider = {

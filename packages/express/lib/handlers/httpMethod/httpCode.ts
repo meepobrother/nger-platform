@@ -1,10 +1,10 @@
 import { StaticProvider } from "@nger/di";
-import { HttpMethodHandler, HttpCodeMetadataKey, ControllerFactory, ResponseToken } from "@nger/core";
+import { ControllerMethodHandler, HttpCodeMetadataKey, ControllerFactory, RESPONSE } from "@nger/core";
 import { Response } from "express";
 import { IMethodDecorator } from '@nger/decorator';
-const handler: HttpMethodHandler<any, number> = (controller: ControllerFactory<any>, decorator: IMethodDecorator<any, number>) => {
+const handler: ControllerMethodHandler<any, number> = (controller: ControllerFactory<any>, decorator: IMethodDecorator<any, number>) => {
     if (decorator.options) {
-        const res = controller.injector.get<Response>(ResponseToken);
+        const res = controller.injector.get<Response>(RESPONSE);
         res.status(decorator.options)
     }
 }

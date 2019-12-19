@@ -1,4 +1,4 @@
-import { ReducerOptions, StaticProvider, ReducerMetadataKey, CaseMetadataKey, RootActionReducerMapToken, Injector, Type, providerToStaticProvider } from "@nger/core";
+import { ReducerOptions, StaticProvider, ReducerMetadataKey, CaseMetadataKey, Injector, Type, providerToStaticProvider } from "@nger/core";
 import { IMethodDecorator, IClassDecorator, getINgerDecorator } from '@nger/decorator';
 import { on, createReducer } from '@nger/rx.store';
 export interface ReducerCaseHandler<T = any, O = any> {
