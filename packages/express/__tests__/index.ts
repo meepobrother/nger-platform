@@ -1,27 +1,28 @@
-import { Controller, Injector, Param, Get, Query, Cid, Module, OnModuleInit, CanActivate, Injectable, Session, Ip, Inject, RequestId } from '@nger/core';
+import { Controller, Injector, Param, Get, Query, Cid, Module, OnModuleInit, Injectable, Session, Ip, Inject, REQUEST_ID, CanLoad, APP_ID } from '@nger/core';
 import { expressPlatform } from '../lib';
 @Injectable()
-export class CanActiveIndex implements CanActivate {
-    canActivate() {
+export class DemoCanLoad implements CanLoad {
+    canLoad() {
         return true;
     }
 }
 @Injectable()
 export class Demo {
-    constructor(private injector: Injector) {
-    }
+    index: number = new Date().getTime();
+    constructor(private injector: Injector) { }
     test() {
-        const cid = this.injector.get(RequestId)
-        return cid;
+        const cid = this.injector.get(REQUEST_ID)
+        return { cid, index: this.index };
     }
 }
 
 @Controller({
     path: '/',
-    useGuards: [CanActiveIndex],
+    useGuards: [DemoCanLoad],
     providers: [Demo]
 })
 export class DemoControler {
+    index: number = new Date().getTime();
     constructor(private injector: Injector) { }
 
     @Get(`/`)
@@ -29,7 +30,7 @@ export class DemoControler {
         const views = Reflect.get(session, 'views') || 0;
         Reflect.set(session, 'views', views + 1);
         const requestId = this.injector.get(Demo).test();
-        return { views, ip, cid, requestId };
+        return { views, ip, cid, requestId, index: this.index };
     }
 
     @Get(`/param/:id`)
@@ -45,7 +46,7 @@ export class DemoControler {
 
 @Module({
     providers: [
-        CanActiveIndex
+        DemoCanLoad
     ],
     controllers: [DemoControler]
 })
@@ -54,4 +55,9 @@ export class AppModule implements OnModuleInit {
     ngOnModuleInit() { }
 }
 
-expressPlatform([]).bootstrapModule(AppModule).then(res => res.onInit()).then()
+expressPlatform([]).bootstrapModule(AppModule).then(res => {
+    const app = res.injector.get<any>(APP_ID)
+    app.listen(9000, () => {
+        console.log(`expressPlatform`)
+    });
+})

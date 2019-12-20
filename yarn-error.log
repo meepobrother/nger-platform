@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ims/.nvm/versions/node/v12.8.1/bin/node /usr/local/bin/yarn add @nger/core @Nger/di @nger/orm.core @nger/rx.effects @nger/rx.store
+  /Users/ims/.nvm/versions/node/v12.8.1/bin/node /usr/local/bin/yarn add @nger/core @nger/di @nger/orm.core @nger/rx.effects @nger/store
 
 PATH: 
   /Users/ims/.nvm/versions/node/v12.8.1/bin:/Users/ims/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Users/ims/.nvm/versions/node/v12.8.1/bin:/Users/ims/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: http://registry.npmjs.org/@Nger%2fdi: Not found
+  Error: http://registry.npmjs.org/@nger%2fstore: Not found
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66255:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:129397:22)
       at Request.emit (events.js:203:13)
@@ -34,10 +34,11 @@ npm manifest:
       "lerna": "^3.13.1"
     },
     "dependencies": {
-      "@nger/core": "^1.7.9",
-      "@nger/di": "^1.4.1",
-      "@nger/orm.core": "^1.0.7",
-      "@nger/rx.effects": "^1.0.4",
+      "@nger/core": "^1.8.4",
+      "@nger/di": "^1.5.2",
+      "@nger/orm.core": "^1.0.8",
+      "@nger/rx.effects": "^1.0.9",
+      "@nger/rx.store": "^1.0.9",
       "@types/cli-color": "^0.3.30",
       "cli-color": "^2.0.0",
       "ts-node": "^8.5.4",
@@ -800,52 +801,51 @@ Lockfile:
       call-me-maybe "^1.0.1"
       glob-to-regexp "^0.3.0"
   
-  "@nger/core@^1.7.4", "@nger/core@^1.7.9":
-    version "1.7.9"
-    resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.7.9.tgz#4faba0ae110a1da37343d5fbfb01443a49213f8e"
-    integrity sha512-OWlReOH2+LHUfivsKSMxUjin9EahKd9VtJlZVk72OWfFEddMNihVGcf/ZV43ZrEJZY8crrbpHcEM0AE6+v2A7A==
+  "@nger/core@^1.8.4":
+    version "1.8.4"
+    resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.8.4.tgz#5cd3cec254f8b79173d424e36ef5f3004333cf18"
+    integrity sha512-dkG5i1iwpE8O5xKooVLY+9S6iPqdMdJDwyV6MEI1FB38moPwL9mIN5bKXIpPYwdbBzwgZmNF+qQ+6TNn+GxqQw==
     dependencies:
-      "@nger/decorator" "^1.1.7"
-      "@nger/di" "^1.4.0"
+      "@nger/decorator" "^1.1.12"
+      "@nger/di" "^1.5.2"
       rxjs "^6.5.3"
   
-  "@nger/decorator@^1.1.6", "@nger/decorator@^1.1.7":
-    version "1.1.7"
-    resolved "https://registry.yarnpkg.com/@nger/decorator/-/decorator-1.1.7.tgz#99ef5a45bcb833af3e9061bd1aa1e16115aab899"
-    integrity sha512-jlqQVb3RcKapd//dNvaSTwbhCI2BAouh/PyI7ze+yMOP2PX24BwdnUnX535Iyt6wCks4Q1Vx/nSpUu5kiw/L4g==
+  "@nger/decorator@^1.1.12":
+    version "1.1.12"
+    resolved "https://registry.yarnpkg.com/@nger/decorator/-/decorator-1.1.12.tgz#8b921fbffda52338ecc304854c599f455bfc5343"
+    integrity sha512-0jOQBEZmG6S5zh1kiaiIIJ90FMKRDfxGyYvjgkn0RMT6SuccOYvkOZkQAaF15rbO1vA5HgMlSfJw6j3ZPrBvSg==
     dependencies:
       reflect-metadata "^0.1.13"
   
-  "@nger/di@^1.4.0", "@nger/di@^1.4.1":
-    version "1.4.1"
-    resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.4.1.tgz#737681b20613404eb734ed6e0fb77aaca8aabfd1"
-    integrity sha512-Np6jY2LEXey+26BtZwKFHpLie0NW1GRGK7cZz2bovr84gWOwCgP1T0k7HuVi82uU6c/DP/Fr3Yili2bhc68vHA==
+  "@nger/di@^1.5.2":
+    version "1.5.2"
+    resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.5.2.tgz#de82d5732347215b472a16fa3ef4053e370f8223"
+    integrity sha512-aKsMtIicdo7g47v52fHllKg9Do2uJcqfM9KKLhXbWJxXkY+A3p7xJNEA9V3a0zleDZVrcmunaOhJPAOo9wSOhA==
     dependencies:
-      "@nger/decorator" "^1.1.6"
+      "@nger/decorator" "^1.1.12"
   
-  "@nger/orm.core@^1.0.7":
-    version "1.0.7"
-    resolved "https://registry.yarnpkg.com/@nger/orm.core/-/orm.core-1.0.7.tgz#4efed2841115fefa1861de810565fae363af67af"
-    integrity sha512-T1/1HvGF33uVOxIwS1pIa7m96zARd8XhOrzcFObTfduNEy2xOSdK7qlVO3q2n3wOfbZZvhpscZGAV+T/ugFAlw==
+  "@nger/orm.core@^1.0.8":
+    version "1.0.8"
+    resolved "https://registry.yarnpkg.com/@nger/orm.core/-/orm.core-1.0.8.tgz#82d1b9bc489b90d5c418884d3419898a12f6e3f5"
+    integrity sha512-uOci7vjldiE99wQY0ae+Uf0H2lNO+f08jBu5QMAJK50SHkA9nSp8ydqpj7XHUs+GhFlF+PRA9ctFs9/2T1AQ2Q==
     dependencies:
-      "@nger/core" "^1.7.4"
+      "@nger/core" "^1.8.4"
   
-  "@nger/rx.effects@^1.0.4":
-    version "1.0.4"
-    resolved "https://registry.yarnpkg.com/@nger/rx.effects/-/rx.effects-1.0.4.tgz#69f77d0b0f9b90b7f5ec0d6e8551c2e61417fa6b"
-    integrity sha512-Msr3B6fIWjMifUMGYK4ws9x8pCh2jZHMlDVFdLW3FXW4OO/GOa/7MR66LDof4BneWEUk2/iT58smpSbqFIhZlA==
+  "@nger/rx.effects@^1.0.9":
+    version "1.0.9"
+    resolved "https://registry.yarnpkg.com/@nger/rx.effects/-/rx.effects-1.0.9.tgz#d40ef0e6bcebebcf275d2e1add07794fb7757e43"
+    integrity sha512-C2kzd7dO7X4p6siyFZlLjIH7vbeQ8djncn73nwbvWGGR43T61+RF5MBCTE70Xh4EhAvntACIrLZOUe7y5kRlyQ==
     dependencies:
-      "@nger/core" "^1.7.9"
-      "@nger/di" "^1.4.0"
-      "@nger/rx.store" "^1.0.4"
+      "@nger/core" "^1.8.4"
+      "@nger/rx.store" "^1.0.9"
       rxjs "^6.5.3"
   
-  "@nger/rx.store@^1.0.4":
-    version "1.0.4"
-    resolved "https://registry.yarnpkg.com/@nger/rx.store/-/rx.store-1.0.4.tgz#000608e796be40ea775a036be6ac33f2f7d86ad8"
-    integrity sha512-lvHs3cKw5Ydsi+JILwJ+5NN+vIwWrcb+BnSFiohuK6BgcNkbct/lGQa+DBgsvoBkIaKptw20RcWI8P09fcXDdQ==
+  "@nger/rx.store@^1.0.9":
+    version "1.0.9"
+    resolved "https://registry.yarnpkg.com/@nger/rx.store/-/rx.store-1.0.9.tgz#5fdd26aaf9260e6918d5bb9edc3b88e01c94b47e"
+    integrity sha512-zgs4A68WY/mUVv7fEXk8LNc5c4mTX8np/YL96GXAT+nEqc28lhx4d/nyBNJMuxp0EbDuVd2+6dITT3rPn3u2Rg==
     dependencies:
-      "@nger/core" "^1.7.9"
+      "@nger/core" "^1.8.4"
       rxjs "^6.5.3"
   
   "@nodelib/fs.stat@^1.1.2":
