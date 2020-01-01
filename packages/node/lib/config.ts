@@ -19,7 +19,7 @@ export class EnvConfig extends Config {
     constructor(private injector: Injector) {
         super();
         config({
-            path: getEnvPath(this.injector.get<string>(MAIN_PATH)),
+            path: join(getEnvPath(this.injector.get<string>(MAIN_PATH)), '.env'),
             encoding: 'utf8',
             debug: isDevMode()
         });
