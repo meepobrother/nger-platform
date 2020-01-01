@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@nger/core@^1.9.19":
-  version "1.9.19"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.19.tgz#d4596adc86268b2b43de47a69d14af1ecbc0e43f"
-  integrity sha512-XJbkAvcnwwmr3CVw9Ev4x5wAOp/bq8AEEc7LvIwImxfDaRrTgGbMM6LwCfHL29eVrqqzw+XMJTavCtNHnNqzAg==
+"@nger/core@^1.9.20":
+  version "1.9.20"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.20.tgz#89db647d018f668b6b5b619863d4a1c658f67ed6"
+  integrity sha512-0Df0wt92yPD338d/Lj8lOjeoLW+ZEXJSaP2X9mjDR5inthUDENxbvoXvDmut1+Qz1OstJZSyI76rKvR/LzJ6Bw==
   dependencies:
     "@nger/di" "^1.5.53"
     rxjs "^6.5.3"
