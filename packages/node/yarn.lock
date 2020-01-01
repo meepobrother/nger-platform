@@ -2,24 +2,12 @@
 # yarn lockfile v1
 
 
-"@nger/core@^1.8.12":
-  version "1.8.12"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.8.12.tgz#ba72056ffdfe352ee231125726893d6d52444b9f"
-  integrity sha512-4bL+3Iy5jp2LSeugCcPfv4C7GX91paXBsdtxccOqgN4acj957kGYTgvKWTz5RMN82AqwRC049jFIatcTIAGRDw==
+"@nger/core@^1.9.19":
+  version "1.9.19"
+  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.9.19.tgz#d4596adc86268b2b43de47a69d14af1ecbc0e43f"
+  integrity sha512-XJbkAvcnwwmr3CVw9Ev4x5wAOp/bq8AEEc7LvIwImxfDaRrTgGbMM6LwCfHL29eVrqqzw+XMJTavCtNHnNqzAg==
   dependencies:
-    "@nger/decorator" "^1.1.12"
-    "@nger/di" "^1.5.7"
-    http-status-codes "^1.4.0"
-    rxjs "^6.5.3"
-
-"@nger/core@^1.8.7":
-  version "1.8.7"
-  resolved "https://registry.yarnpkg.com/@nger/core/-/core-1.8.7.tgz#76e3ba1ff4703ddb22f8f4f20ac4b643590cb9c7"
-  integrity sha512-YTxXgJiHWoTo55xbWbLFfxcumLIzlV05FcQ/OxiE8NVronR6z5WvfA8/mHawtxruajviE4lbYhQm6YRt+32UBg==
-  dependencies:
-    "@nger/decorator" "^1.1.12"
-    "@nger/di" "^1.5.5"
-    http-status-codes "^1.4.0"
+    "@nger/di" "^1.5.53"
     rxjs "^6.5.3"
 
 "@nger/decorator@^1.1.12":
@@ -29,35 +17,12 @@
   dependencies:
     reflect-metadata "^0.1.13"
 
-"@nger/di@^1.5.5":
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.5.5.tgz#e55fca7648275e8fc595bfe20af68ff206dae1c6"
-  integrity sha512-VbrjhS+B9nPQ6nDmSU3xkCvJkTkiEYoYC9Imw3UHACLvJbMs2shwzMzGH25/HLZM2osyd14Pd7EZ8Uo76lDh/Q==
+"@nger/di@^1.5.53":
+  version "1.5.53"
+  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.5.53.tgz#e8ab89090371077445ac9563ebe16d1f4a7286b4"
+  integrity sha512-CyjLTen9EyPMkJbq/0jxBL8mRGjiIkdivmfE4IJdwVnLjMC9pIwkTnBRzipLAmZGKZMiMFwkdtt720vSTUkSwg==
   dependencies:
     "@nger/decorator" "^1.1.12"
-
-"@nger/di@^1.5.7":
-  version "1.5.7"
-  resolved "https://registry.yarnpkg.com/@nger/di/-/di-1.5.7.tgz#bcc92b5ca317a9400a6dc3be0d6f3973c7a2de6e"
-  integrity sha512-CNNqFxTFp2Ir7kvAMxhcMVeXene5SH4O9jQbVTkvvJP1es/dt0Pr4VFltMkaE6wW1dAMyr1RhZ5bzYRdOuJy+A==
-  dependencies:
-    "@nger/decorator" "^1.1.12"
-
-"@nger/platform.core@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@nger/platform.core/-/platform.core-1.1.1.tgz#0388b6eedad4bbff26907f453cf5a6060b032b62"
-  integrity sha512-7Urg1kPpmF7i8AwUgtOTjVNYZWBMNbCblfVersLRMDO5mLDX1ZX7RhH+ff4DdxW97rfcY0w30f5KjonfOX0uSg==
-  dependencies:
-    "@nger/core" "^1.8.7"
-    "@nger/rx.store" "^1.0.11"
-
-"@nger/rx.store@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@nger/rx.store/-/rx.store-1.0.11.tgz#c1f38caa52bced17c4ba9947f70496a493515e75"
-  integrity sha512-fdp/ayt2v3gomcBO62pAr5JrUH6W2hwYeFaaiagMgsj/4mYnoAJutEdQtwUdOnlXU5G375ovYw4gSb31mgVetg==
-  dependencies:
-    "@nger/core" "^1.8.7"
-    rxjs "^6.5.3"
 
 "@types/cli-color@^0.3.30":
   version "0.3.30"
@@ -70,6 +35,11 @@
   integrity sha512-ylSC9GhfRH7m1EUXBXofhgx4lUWmFeQDINW5oLuS+gxWdfUeW4zJdeVTYVkexEW+e2VUvlZR2kGnGGipAWR7kw==
   dependencies:
     dotenv "*"
+
+"@types/node@^13.1.2":
+  version "13.1.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.1.2.tgz#fe94285bf5e0782e1a9e5a8c482b1c34465fa385"
+  integrity sha512-B8emQA1qeKerqd1dmIsQYnXi+mmAzTB7flExjmy5X1aVAKFNNNDubkavwR13kR6JnpeLp3aLoJhwn9trWPAyFQ==
 
 ansi-regex@^2.1.1:
   version "2.1.1"
@@ -151,11 +121,6 @@ ext@^1.1.2:
   integrity sha512-Key5NIsUxdqKg3vIsdw9dSuXpPCQ297y6wBjL30edxwPgt2E44WcWBZey/ZvUc6sERLTxKdyCu4gZFmUbk1Q7A==
   dependencies:
     type "^2.0.0"
-
-http-status-codes@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/http-status-codes/-/http-status-codes-1.4.0.tgz#6e4c15d16ff3a9e2df03b89f3a55e1aae05fb477"
-  integrity sha512-JrT3ua+WgH8zBD3HEJYbeEgnuQaAnUeRRko/YojPAJjGmIfGD3KPU/asLdsLwKjfxOmQe5nXMQ0pt/7MyapVbQ==
 
 is-promise@^2.1:
   version "2.1.0"

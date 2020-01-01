@@ -1,6 +1,6 @@
 {
-    "name": "@nger/platform.node",
-    "version": "1.1.10",
+    "name": "@nger/platform-node",
+    "version": "1.1.11",
     "description": "> TODO: description",
     "author": "imeepos <1037483576@qq.com>",
     "homepage": "https://github.com/meepobrother/nger-platform#readme",
@@ -15,7 +15,6 @@
         "lib"
     ],
     "publishConfig": {
-        "registry": "http://registry.npmjs.org",
         "access": "public"
     },
     "repository": {
@@ -29,13 +28,13 @@
         "url": "https://github.com/meepobrother/nger-platform/issues"
     },
     "dependencies": {
-        "@nger/core": "^1.8.12",
-        "@nger/platform.core": "^1.1.2",
+        "@nger/core": "^1.9.19",
         "cli-color": "^2.0.0",
         "dotenv": "^8.2.0"
     },
     "devDependencies": {
         "@types/cli-color": "^0.3.30",
-        "@types/dotenv": "^8.2.0"
+        "@types/dotenv": "^8.2.0",
+        "@types/node": "^13.1.2"
     }
 }
