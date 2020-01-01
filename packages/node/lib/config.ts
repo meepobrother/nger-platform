@@ -1,4 +1,4 @@
-import { Config, MAIN_PATH, Injector, isDevMode } from '@nger/core';
+import { Config, MAIN_PATH, Injector, isDevMode, Injectable } from '@nger/core';
 import { config } from 'dotenv';
 import { dirname, join, extname } from 'path';
 import { existsSync } from 'fs';
@@ -14,6 +14,7 @@ export function getEnvPath(path: string): string {
     }
     return getEnvPath(join(dir, '..'))
 }
+@Injectable()
 export class EnvConfig extends Config {
     constructor(private injector: Injector) {
         super();

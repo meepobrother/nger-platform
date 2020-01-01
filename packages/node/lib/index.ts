@@ -1,12 +1,14 @@
 import {
   createPlatformFactory,
   corePlatform,
-  Config
+  Config,
+  Injector
 } from "@nger/core";
 import { EnvConfig } from "./config";
 export const platformNode = createPlatformFactory(corePlatform, "node", [
   {
     provide: Config,
-    useClass: EnvConfig
+    useFactory: (injector: Injector) => new EnvConfig(injector),
+    deps: [Injector]
   }
 ]);
